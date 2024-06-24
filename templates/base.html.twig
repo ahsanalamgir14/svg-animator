@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale-1">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+      
+        {% block stylesheets %}
+
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %} 
+    </head>
+    <body>
+   
+        <div class="container-fluid g-0">
+
+        {% if app.user and app.user.hasRole("ROLE_ADMIN") %}
+            {% include 'navigation/admin.html.twig' %}
+        {% elseif app.user and app.user.hasRole("ROLE_USER") %}
+            {% include 'navigation/main.html.twig' %}
+        {% endif %}
+
+        {% block nav %}
+        {% endblock %}
+
+
+            <div class="container-fluid" style="margin-top: 2rem;">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+<!--<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const frontCircles = document.querySelectorAll('.front-circle');
+    const backCircles = document.querySelectorAll('.back-circle');
+
+    frontCircles.forEach((frontCircle, index) => {
+        frontCircle.addEventListener('click', function() {
+            frontCircle.classList.add('flipped');
+            backCircles[index].style.visibility = 'visible';
+            frontCircle.style.visibility = 'hidden';
+        });
+    });
+
+    backCircles.forEach((backCircle, index) => {
+        backCircle.addEventListener('click', function() {
+            frontCircles[index].classList.remove('flipped');
+            backCircle.style.visibility = 'hidden';
+            frontCircles[index].style.visibility = 'visible';
+        });
+    });
+});
+</script>-->
+
+
+    </body>
+</html>
