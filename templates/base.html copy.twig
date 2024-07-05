@@ -11,11 +11,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="app.css" rel="stylesheet">
-
-    <!-- Include GSAP and MotionPathPlugin from CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
-
     {% block stylesheets %}
     {% endblock %}
 
@@ -24,10 +19,9 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            /* backface-visibility: hidden; */
+            backface-visibility: hidden;
             pointer-events: all !important;
             cursor: pointer !important;
-			transition: transform 0.6s, visibility 0.6s, opacity 0.6s;
         }
 
         .back-circle {
@@ -37,34 +31,28 @@
             visibility: hidden;
             transform-origin: center;
             cursor: pointer;
-			transition: transform 0.6s, visibility 0.6s, opacity 0.6s;
         }
 
-        /* .svg-container {
+        .svg-container {
             width: 1000px;
             height: 1000px;
-            position: relative;
-        } */
+        }
 
         .card {
             cursor: pointer;
-            /* transition: transform 1s; */
-            /* transform-style: preserve-3d; */
-            /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+            transition: transform 1s;
+            transform-style: preserve-3d;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
             -webkit-transform-origin: center center;
-            transform-origin: center center; */
-            /* transition: transform 0.6s; */
-			/* width: 200px;
-			height: 200px; */
-            position: relative;
-            width: 50%;
+            transform-origin: center center;
+            transition: transform 0.6s;
         }
 
-        /* .scene {
+        .scene {
             display: inline-block;
             margin: 40px 0;
             perspective: 600px;
-        } */
+        }
 
         .card__face {
             position: absolute;
@@ -73,94 +61,58 @@
             line-height: 260px;
             color: white;
             text-align: center;
-            /* backface-visibility: hidden;
+            backface-visibility: hidden;
             -webkit-transform-origin: center center;
-            transform-origin: center center; */
-            display: block;
-            width: 100%;
-            height: auto;
+            transform-origin: center center;
         }
 
         .card__face--front {
+            background: crimson;
             z-index: 2;
-            display: block;
-            width: 100%;
-            height: auto;
         }
 
         .card__face--back {
-            /* transform: rotateY(90deg); */
+            background: slateblue;
+            transform: rotateY(180deg);
             z-index: 1;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: #008CBA;
-            overflow: hidden;
-            width: 0;
-            height: 100%;
-            transition: .5s ease;
         }
 
         .card {
             position: relative;
-            width: 50%;
+            width: 200px;
             height: 300px;
             perspective: 1000px;
         }
 
         .card__face {
-            /* backface-visibility: hidden; */
-            /* transition: opacity 0.6s ease-in-out, visibility 0s ease-in-out 0.6s, transform 0.6s ease-in-out; */
-            /* display: block;
-            width: 100%;
-            height: auto; */
+            backface-visibility: hidden;
+            transition: opacity 0.6s ease-in-out, visibility 0s ease-in-out 0.6s, transform 1s ease-in-out;
         }
 
         .card__face--front {
-            /* visibility: visible;
+            visibility: visible;
             opacity: 1;
-            transform: rotateY(0deg); */
-                        /* transition: opacity 0.6s ease-in-out, visibility 0s ease-in-out 0.6s, transform 0.6s ease-in-out; */
-            display: block;
-            width: 100%;
-            height: auto;
+            transform: rotateY(0deg);
         }
 
         .card__face--back {
-            /* visibility: hidden;
-            transform: rotateY(0deg); */
+            visibility: hidden;
             opacity: 0;
-            width: 50%;
+            transform: rotateY(180deg);
         }
 
         .card.is-flipped .card__face--front {
             visibility: hidden;
             opacity: 0;
-            /* transform: rotateY(0deg);
-			transition: opacity 0.6s ease-in-out, visibility 0s ease-in-out 0.6s, transform 0.6s ease-in-out;	
-			animation: fadeOut 0.6s forwards; */
+            transform: rotateY(270deg);
+            transition: opacity 1s ease-in-out, visibility 0s ease-in-out 0.6s, transform 1s ease-in-out;
         }
 
         .card.is-flipped .card__face--back {
             visibility: visible;
             opacity: 1;
-            /* transform: rotateY(0deg); */
-			/* animation: fadeIn 0.6s forwards; */
-			/* transition: opacity 0.6s ease-in-out, visibility 0s ease-in-out, transform 0.6s ease-in-out 0.3s; */
-        }
-
-        .circle {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: burlywood;
-            border-radius: 50%;
-        }
-        .ball {
-            fill: yellow;
-            stroke: none;
-            stroke-width: 1;
+            transform: rotateY(0deg);
+            transition: opacity 0.6s ease-in-out, visibility 0s ease-in-out, transform 0.6s ease-in-out;
         }
     </style>
 </head>
@@ -187,12 +139,12 @@
                 });
             });
 
-            // document.querySelectorAll('.card').forEach(function (card) {
-            //     card.addEventListener('click', function (e) {
-            //         e.preventDefault();
-            //         this.classList.toggle('flipped');
-            //     });
-            // });
+            document.querySelectorAll('.card').forEach(function (card) {
+                card.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    this.classList.toggle('flipped');
+                });
+            });
 
             const frontCircles = document.querySelectorAll('.front-circle');
             const backCircles = document.querySelectorAll('.back-circle');
@@ -205,8 +157,8 @@
             frontCircles.forEach((frontCircle, index) => {
                 frontCircle.addEventListener('click', function () {
                     setTimeout(() => {
-                        // backCircles[index].style.visibility = 'visible';
-                        // frontCircle.style.visibility = 'hidden';
+                        backCircles[index].style.visibility = 'visible';
+                        frontCircle.style.visibility = 'hidden';
                     }, 500);
                 });
             });
@@ -214,24 +166,10 @@
             backCircles.forEach((backCircle, index) => {
                 backCircle.addEventListener('click', function() {
                     setTimeout(() => {
-                        // backCircle.style.visibility = 'hidden';
-                        // frontCircles[index].style.visibility = 'visible';
+                        backCircle.style.visibility = 'hidden';
+                        frontCircles[index].style.visibility = 'visible';
                     }, 500);
                 });
-            });
-
-            gsap.registerPlugin(MotionPathPlugin);
-
-            // Animate the circle along the path
-            gsap.to(".ball", {
-                duration: 3,
-                repeat: -1,
-                motionPath: {
-                    path: "#linie-pv-bat-path",
-                    align: "#linie-pv-bat-path",
-                    autoRotate: true,
-                    alignOrigin: [0.5, 0.5]
-                }
             });
         });
     </script>
