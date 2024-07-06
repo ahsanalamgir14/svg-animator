@@ -5,13 +5,6 @@
 
 {% block body %}
 
-{# <svg class="path-container" width="400" height="100">
-    <path class="path" d="M 50 50 L 300 50" id="motionPath"/>
-    <circle class="ball" r="10" cx="50" cy="50" />
-</svg> #}
-
-{# <div class="circle"></div> #}
-
 	<div class="col-md-6 d-flex items-center justify-content-center svg-container">
             <svg width="100%" height="100%" viewBox="0 0 2481 2008" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
                 <g id="verkabelung" transform="matrix(0.978817,0,0,0.978817,-859.505,-107.605)">
@@ -292,43 +285,6 @@
 					</g>
 				</g>
 
-                {# working with error #}
-                {# <g class="card">
-                    <g class="card-front">
-                        <g class="front front-circle">
-                            <g id="pv" transform="matrix(1.80465,0,0,1.80465,-2443.87,-713.274)" class="">
-                                <g id="pv-icon" transform="matrix(0.554124,0,0,0.554124,1354.21,395.242)">
-                                    <path d="M994.221,301.423L994.213,382.493M1111.81,344.071L934.129,344.071M1057.1,303.022L1057.09,381.804M1113.11,299.681L1113.11,383.987L930.969,383.987L930.969,299.681L1113.11,299.681ZM962.54,273.323C937.924,233.89 879.995,259.328 905.332,308.045M852.777,320.988L875.913,311.909M844.324,269.448L869.023,272.22M871.239,226.343L888.148,244.557M928.773,204.274L929.523,229.116M981.621,223.249L967.053,243.385" style="fill:none;stroke:url(#_Linear6);stroke-width:12px;"/>
-                                </g>
-                                <g id="pv-heading" transform="matrix(0.546683,0,0,0.546683,1827.09,471.655)">
-                                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:70.766px;">PV-<tspan x="117.971px " y="0px ">A</tspan>nlage</text>
-                                </g>
-                                <g id="pv-text" transform="matrix(0.546683,0,0,0.546683,1885.35,682.275)">
-                                    <g transform="matrix(70.766,0,0,70.766,129.784,0)">
-                                    </g>
-                                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:70.766px;">texti</text>
-                                </g>
-                                <g id="pv-circle" transform="matrix(0.524648,0,0,0.524648,1111.72,249.266)">
-                                    <circle cx="1540.36" cy="606.095" r="312.415" style="fill:none;stroke:url(#_Linear7);stroke-width:11px;"/>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                    <g class="card-back">
-                        <g class="back-circle" id="back-circle">
-                            <path id="pv-icon" d="M994.221,301.423L994.213,382.493M1111.81,344.071L934.129,344.071M1057.1,303.022L1057.09,381.804M1113.11,299.681L1113.11,383.987L930.969,383.987L930.969,299.681L1113.11,299.681ZM962.54,273.323C937.924,233.89 879.995,259.328 905.332,308.045M852.777,320.988L875.913,311.909M844.324,269.448L869.023,272.22M871.239,226.343L888.148,244.557M928.773,204.274L929.523,229.116M981.621,223.249L967.053,243.385" style="fill:none;stroke:url(#_Linear6);stroke-width:12px;"/>
-                            <g id="pv-heading" transform="matrix(0.986571,0,0,0.986571,863.544,293.561)">
-                                <text x="37.387px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:70.766px;">45 kWh</text>
-                                <g transform="matrix(70.766,0,0,70.766,314.681,70.766)">
-                                </g>
-                                <text x="0px" y="70.766px" style="font-family:'ArialMT', 'Arial';font-size:70.766px;">produziert</text>
-                            </g>
-                            <g id="pv-circle" transform="matrix(0.946806,0,0,0.946806,-437.605,-263.436)">
-                                <circle cx="1540.36" cy="606.095" r="312.415" style="fill:none;stroke:url(#_Linear7);stroke-width:11px;"/>
-                            </g>
-                        </g>
-                    </g>
-                </g> #}
                 <g class="scene scene--card">
                     <g class="card">
                         <g class="card__face card__face--front front-circle">
@@ -363,41 +319,6 @@
                         </g>
                     </g>
                 </g>
-                    
-
-                {# Front pv #}
-                {# <g id="pv" transform="matrix(1.80465,0,0,1.80465,-2443.87,-713.274)" class="front-circle slidecaption">
-                    <g id="pv-icon" transform="matrix(0.554124,0,0,0.554124,1354.21,395.242)">
-                        <path d="M994.221,301.423L994.213,382.493M1111.81,344.071L934.129,344.071M1057.1,303.022L1057.09,381.804M1113.11,299.681L1113.11,383.987L930.969,383.987L930.969,299.681L1113.11,299.681ZM962.54,273.323C937.924,233.89 879.995,259.328 905.332,308.045M852.777,320.988L875.913,311.909M844.324,269.448L869.023,272.22M871.239,226.343L888.148,244.557M928.773,204.274L929.523,229.116M981.621,223.249L967.053,243.385" style="fill:none;stroke:url(#_Linear6);stroke-width:12px;"/>
-                    </g>
-                    <g id="pv-heading" transform="matrix(0.546683,0,0,0.546683,1827.09,471.655)">
-                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:70.766px;">PV-<tspan x="117.971px " y="0px ">A</tspan>nlage</text>
-                    </g>
-                    <g id="pv-text" transform="matrix(0.546683,0,0,0.546683,1885.35,682.275)">
-                        <g transform="matrix(70.766,0,0,70.766,129.784,0)">
-                        </g>
-                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:70.766px;">texti</text>
-                    </g>
-                    <g id="pv-circle" transform="matrix(0.524648,0,0,0.524648,1111.72,249.266)">
-                        <circle cx="1540.36" cy="606.095" r="312.415" style="fill:none;stroke:url(#_Linear7);stroke-width:11px;"/>
-                    </g>
-                </g> #}
-
-                {# back pv circle #}
-                {# <g class="back-circle" id="back-circle">
-                    <path id="pv-icon" d="M994.221,301.423L994.213,382.493M1111.81,344.071L934.129,344.071M1057.1,303.022L1057.09,381.804M1113.11,299.681L1113.11,383.987L930.969,383.987L930.969,299.681L1113.11,299.681ZM962.54,273.323C937.924,233.89 879.995,259.328 905.332,308.045M852.777,320.988L875.913,311.909M844.324,269.448L869.023,272.22M871.239,226.343L888.148,244.557M928.773,204.274L929.523,229.116M981.621,223.249L967.053,243.385" style="fill:none;stroke:url(#_Linear6);stroke-width:12px;"/>
-                    <g id="pv-heading" transform="matrix(0.986571,0,0,0.986571,863.544,293.561)">
-                        <text x="37.387px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:70.766px;">45 kWh</text>
-                        <g transform="matrix(70.766,0,0,70.766,314.681,70.766)">
-                        </g>
-                        <text x="0px" y="70.766px" style="font-family:'ArialMT', 'Arial';font-size:70.766px;">produziert</text>
-                    </g>
-                    <g id="pv-circle" transform="matrix(0.946806,0,0,0.946806,-437.605,-263.436)">
-                        <circle cx="1540.36" cy="606.095" r="312.415" style="fill:none;stroke:url(#_Linear7);stroke-width:11px;"/>
-                    </g>
-                </g> #}
-                {# back pv circle ends #}
-
 
                 <g id="netz" transform="matrix(1.80465,0,0,1.80465,-2126.25,-1178.87)">
                     <g id="netz-symbol" transform="matrix(0.554124,0,0,0.554124,1178.21,653.239)">
