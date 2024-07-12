@@ -14,12 +14,21 @@
 
     <!-- Include GSAP and MotionPathPlugin from CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
     {% block stylesheets %}
     {% endblock %}
 
     <style>
+.circle {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  background-color: lime;
+  border-radius: 50%;
+  top: 0px;
+  left: 0px;
+}
         .front-circle {
             position: absolute;
             width: 100%;
@@ -196,73 +205,65 @@
 
             gsap.registerPlugin(MotionPathPlugin);
 
-            // linie-pv-netz-balls
-            gsap.to(".linie-pv-netz-ball1", {
-                duration: 3,
-                repeat: -1,
-                motionPath: {
-                    path: "#linie-pv-netz-path",
-                    align: "#linie-pv-netz-path",
-                    autoRotate: true,
-                    alignOrigin: [0.5, 0.5]
-                }
+            var path = anime.path('#linie-pv-netz-path');
+
+        // function createAnimation(target, delay) {
+        //     return anime({
+        //         targets: target,
+        //         translateX: path('x'),
+        //         translateY: path('y'),
+        //         rotate: path('angle'),
+        //         duration: 4000,
+        //         easing: 'easeInOutSine',
+        //         loop: true,
+        //         delay: anime.stagger(delay, {start: 0, from: 'first'})
+        //     });
+        // }
+
+        // // Create animations for each ball
+        // createAnimation('.linie-pv-netz-ball1', 0);
+        // createAnimation('.linie-pv-netz-ball2', 400);
+        // createAnimation('.linie-pv-netz-ball3', 800);
+
+            // anime({
+            //     targets: '.linie-pv-netz-ball1',
+            //     translateX: path('x'),
+            //     translateY: path('y'),
+            //     rotate: path('angle'),
+            //     duration: 4000,
+            //     autoplay: true,
+            //     loop: true
+            // });
+
+            anime({
+                targets: '.linie-pv-netz-ball1',
+                translateX: path('x'),
+                translateY: path('y'),
+                rotate: path('angle'),
+                easing: 'easeInOutSine',
+                duration: 3000,
+                loop: true
             });
-            gsap.to(".linie-pv-netz-ball2", {
-                duration: 3,
-                repeat: -1,
-                delay: 0.2,
-                motionPath: {
-                    path: "#linie-pv-netz-path",
-                    align: "#linie-pv-netz-path",
-                    autoRotate: true,
-                    alignOrigin: [0.5, 0.5]
-                }
+            anime({
+                targets: '.linie-pv-netz-ball2',
+                translateX: path('x'),
+                translateY: path('y'),
+                rotate: path('angle'),
+                easing: 'easeInOutSine',
+                duration: 2700,
+                delay: 300,
+                loop: true
             });
-            gsap.to(".linie-pv-netz-ball3", {
-                duration: 3,
-                repeat: -1,
-                delay: 0.4,
-                motionPath: {
-                    path: "#linie-pv-netz-path",
-                    align: "#linie-pv-netz-path",
-                    autoRotate: true,
-                    alignOrigin: [0.5, 0.5]
-                }
+            anime({
+                targets: '.linie-pv-netz-ball3',
+                translateX: path('x'),
+                translateY: path('y'),
+                rotate: path('angle'),
+                easing: 'easeInOutSine',
+                duration: 2500,
+                delay: 500,
+                loop: true
             });
-            gsap.to(".linie-pv-netz-ball4", {
-                duration: 3,
-                repeat: -1,
-                delay: 1.4,
-                motionPath: {
-                    path: "#linie-pv-netz-path",
-                    align: "#linie-pv-netz-path",
-                    autoRotate: true,
-                    alignOrigin: [0.5, 0.5]
-                }
-            });
-            gsap.to(".linie-pv-netz-ball5", {
-                duration: 3,
-                repeat: -1,
-                delay: 1.6,
-                motionPath: {
-                    path: "#linie-pv-netz-path",
-                    align: "#linie-pv-netz-path",
-                    autoRotate: true,
-                    alignOrigin: [0.5, 0.5]
-                }
-            });
-            gsap.to(".linie-pv-netz-ball6", {
-                duration: 3,
-                repeat: -1,
-                delay: 1.8,
-                motionPath: {
-                    path: "#linie-pv-netz-path",
-                    align: "#linie-pv-netz-path",
-                    autoRotate: true,
-                    alignOrigin: [0.5, 0.5]
-                }
-            });
-            // ends linie-pv-netz-balls
             
             // start linie-pv-bat-balls
             gsap.to(".linie-pv-bat-ball1", {

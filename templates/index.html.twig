@@ -5,25 +5,22 @@
 
 {% block body %}
 
-
-<div class="circle"></div>
-<svg id="svg" width="100%" height="100%" viewBox="0 0 2481 2008" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
-			<path id="linie-pv-netz-path" d="M1453.29,739.477L1453.29,1472.11" style="fill:none;stroke:rgb(166,166,166);stroke-width:4.01px;"/>
-</svg>
-
 	<div class="col-md-6 d-flex items-center justify-content-center svg-container">
         <div class="circle"></div>
 		<svg id="svg" width="100%" height="100%" viewBox="0 0 2481 2008" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
 			<g id="verkabelung" transform="matrix(0.978817,0,0,0.978817,-859.505,-107.605)">
 				<g id="linie-pv-netz" transform="matrix(1,0,0,1.04548,467.477,-38.3748)">
 					<path id="linie-pv-netz-path" d="M1453.29,739.477L1453.29,1472.11" style="fill:none;stroke:rgb(166,166,166);stroke-width:4.01px;"/>
+					{# <circle class="ball linie-pv-netz-ball1" r="20" cx="0" cy="0" />
+					<circle class="ball linie-pv-netz-ball2" r="20" cx="0" cy="0" />
+					<circle class="ball linie-pv-netz-ball3" r="20" cx="0" cy="0" /> #}
+					<circle class="linie-pv-netz-ball1" cx="0" cy="0" r="15" fill="#FCB748"/>
+					<circle class="linie-pv-netz-ball2" cx="0" cy="0" r="15" fill="#FCB748"/>
+					<circle class="linie-pv-netz-ball3" cx="0" cy="0" r="15" fill="#FCB748"/>
+					<circle class="linie-pv-netz-ball4" r="25" cx="0" cy="0" />
+					<circle class="linie-pv-netz-ball5" r="25" cx="0" cy="0" />
+					<circle class="linie-pv-netz-ball6" r="25" cx="0" cy="0" />
 				</g>
-				<circle class="ball linie-pv-netz-ball1" r="20" cx="0" cy="0" />
-				<circle class="ball linie-pv-netz-ball2" r="20" cx="0" cy="0" />
-				<circle class="ball linie-pv-netz-ball3" r="20" cx="0" cy="0" />
-				<circle class="ball linie-pv-netz-ball4" r="20" cx="0" cy="0" />
-				<circle class="ball linie-pv-netz-ball5" r="20" cx="0" cy="0" />
-				<circle class="ball linie-pv-netz-ball6" r="20" cx="0" cy="0" />
 
 				<g id="linie-bat-verbrauch" transform="matrix(6.12323e-17,1,-1.13334,6.93969e-17,3175.72,-325.064)">
 					<path d="M1453.29,739.477L1453.29,1472.11" style="fill:none;stroke:rgb(166,166,166);stroke-width:3.84px;"/>
@@ -40,13 +37,13 @@
 
 				<g id="linie-pv-verbrauch" transform="matrix(0.924546,0,0,1.17721,-529.504,-918.885)">
 					<path id="linie-pv-verbrauch-path" d="M2700.02,1399.96L2700.05,1679.87C2700.02,1694.31 2706.13,1700.03 2720.04,1699.86L3100.08,1699.86" style="fill:none;stroke:rgb(166,166,166);stroke-width:3.88px;"/>
+					<circle class="ball linie-pv-verbrauch-ball1" r="20" cx="0" cy="0" />
+					<circle class="ball linie-pv-verbrauch-ball2" r="20" cx="0" cy="0" />
+					<circle class="ball linie-pv-verbrauch-ball3" r="20" cx="0" cy="0" />
+					<circle class="ball linie-pv-verbrauch-ball4" r="20" cx="0" cy="0" />
+					<circle class="ball linie-pv-verbrauch-ball5" r="20" cx="0" cy="0" />
+					<circle class="ball linie-pv-verbrauch-ball6" r="20" cx="0" cy="0" />
 				</g>
-				<circle class="ball linie-pv-verbrauch-ball1" r="20" cx="0" cy="0" />
-				<circle class="ball linie-pv-verbrauch-ball2" r="20" cx="0" cy="0" />
-				<circle class="ball linie-pv-verbrauch-ball3" r="20" cx="0" cy="0" />
-				<circle class="ball linie-pv-verbrauch-ball4" r="20" cx="0" cy="0" />
-				<circle class="ball linie-pv-verbrauch-ball5" r="20" cx="0" cy="0" />
-				<circle class="ball linie-pv-verbrauch-ball6" r="20" cx="0" cy="0" />
 
 				<g id="linie-bat-eeg" transform="matrix(-0.924546,0,0,-1.17721,4371.55,3177.96)">
 					<path d="M2700.02,1422.75L2700.05,1679.87C2700.02,1694.31 2706.13,1700.03 2720.04,1699.86L3108.28,1699.86" style="fill:none;stroke:rgb(166,166,166);stroke-width:3.88px;"/>
