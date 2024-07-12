@@ -13,6 +13,7 @@
     <link href="app.css" rel="stylesheet">
 
     <!-- Include GSAP and MotionPathPlugin from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
@@ -20,15 +21,6 @@
     {% endblock %}
 
     <style>
-.circle {
-  position: relative;
-  height: 20px;
-  width: 20px;
-  background-color: lime;
-  border-radius: 50%;
-  top: 0px;
-  left: 0px;
-}
         .front-circle {
             position: absolute;
             width: 100%;
@@ -206,34 +198,6 @@
             gsap.registerPlugin(MotionPathPlugin);
 
             var path = anime.path('#linie-pv-netz-path');
-
-        // function createAnimation(target, delay) {
-        //     return anime({
-        //         targets: target,
-        //         translateX: path('x'),
-        //         translateY: path('y'),
-        //         rotate: path('angle'),
-        //         duration: 4000,
-        //         easing: 'easeInOutSine',
-        //         loop: true,
-        //         delay: anime.stagger(delay, {start: 0, from: 'first'})
-        //     });
-        // }
-
-        // // Create animations for each ball
-        // createAnimation('.linie-pv-netz-ball1', 0);
-        // createAnimation('.linie-pv-netz-ball2', 400);
-        // createAnimation('.linie-pv-netz-ball3', 800);
-
-            // anime({
-            //     targets: '.linie-pv-netz-ball1',
-            //     translateX: path('x'),
-            //     translateY: path('y'),
-            //     rotate: path('angle'),
-            //     duration: 4000,
-            //     autoplay: true,
-            //     loop: true
-            // });
 
             anime({
                 targets: '.linie-pv-netz-ball1',
