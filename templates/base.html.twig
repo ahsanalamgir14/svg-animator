@@ -198,7 +198,6 @@
             gsap.registerPlugin(MotionPathPlugin);
 
             var liniePvNetzPath = anime.path('#linie-pv-netz-path');
-
             anime({
                 targets: '.linie-pv-netz-ball1',
                 translateX: liniePvNetzPath('x'),
@@ -298,71 +297,111 @@
             // ends linie-pv-bat-balls
 
             // starts linie-pv-verbrauch-balls
-            gsap.to(".linie-pv-verbrauch-ball1", {
-                duration: 3,
-                repeat: -1,
-                motionPath: {
-                    path: "#linie-pv-verbrauch-path",
-                    align: "#linie-pv-verbrauch-path",
-                    autoRotate: true,
-                    alignOrigin: [0.5, 0.5]
-                }
+            var liniePvVerbrauchPath = anime.path('#linie-pv-verbrauch-path');
+
+            anime({
+                targets: '.linie-pv-verbrauch-ball1',
+                translateX: liniePvVerbrauchPath('x'),
+                translateY: liniePvVerbrauchPath('y'),
+                rotate: liniePvVerbrauchPath('angle'),
+                easing: 'easeInOutSine',
+                duration: 3000,
+                loop: true
             });
-            gsap.to(".linie-pv-verbrauch-ball2", {
-                duration: 3,
-                repeat: -1,
-                delay: 0.2,
-                motionPath: {
-                    path: "#linie-pv-verbrauch-path",
-                    align: "#linie-pv-verbrauch-path",
-                    autoRotate: true,
-                    alignOrigin: [0.5, 0.5]
-                }
+            anime({
+                targets: '.linie-pv-verbrauch-ball2',
+                translateX: liniePvVerbrauchPath('x'),
+                translateY: liniePvVerbrauchPath('y'),
+                rotate: liniePvVerbrauchPath('angle'),
+                easing: 'easeInOutSine',
+                duration: 2700,
+                delay: 300,
+                loop: true
             });
-            gsap.to(".linie-pv-verbrauch-ball3", {
-                duration: 3,
-                repeat: -1,
-                delay: 0.4,
-                motionPath: {
-                    path: "#linie-pv-verbrauch-path",
-                    align: "#linie-pv-verbrauch-path",
-                    autoRotate: true,
-                    alignOrigin: [0.5, 0.5]
-                }
+            anime({
+                targets: '.linie-pv-verbrauch-ball3',
+                translateX: liniePvVerbrauchPath('x'),
+                translateY: liniePvVerbrauchPath('y'),
+                rotate: liniePvVerbrauchPath('angle'),
+                easing: 'easeInOutSine',
+                duration: 2500,
+                delay: 500,
+                loop: true
             });
-            gsap.to(".linie-pv-verbrauch-ball4", {
-                duration: 3,
-                repeat: -1,
-                delay: 1.4,
-                motionPath: {
-                    path: "#linie-pv-verbrauch-path",
-                    align: "#linie-pv-verbrauch-path",
-                    autoRotate: true,
-                    alignOrigin: [0.5, 0.5]
-                }
+
+            // start linie-netz-eeg-path
+
+            var liniNetzEegPath = anime.path('#linie-netz-eeg-path');
+
+            function getPointAtLength(path, length) {
+                const point = path.getPointAtLength(length);
+                return {
+                    x: point.x,
+                    y: point.y
+                };
+            }
+
+            // Get the path element
+            const path = document.querySelector('#linie-netz-eeg-path');
+
+            // Calculate the total length of the path
+            const pathLength = path.getTotalLength();
+
+            // Calculate the midpoint of the path
+            const midLength = pathLength / 2;
+
+            // Calculate the point at the midpoint of the path
+            const midPoint = getPointAtLength(path, midLength);
+
+            // Calculate the point at the start of the path
+            const startPoint = getPointAtLength(path, 0);
+
+            // Position the red circle at the midpoint
+            const redCircle = document.querySelector('.linie-netz-eeg-ball1');
+            redCircle.setAttribute('cx', midPoint.x);
+            redCircle.setAttribute('cy', midPoint.y);
+
+            // Animate the red circle to the start of the path
+            anime({
+                targets: redCircle,
+                cx: startPoint.x,
+                cy: startPoint.y,
+                duration: 2000,
+                easing: 'easeInOutQuad',
+                autoplay: true,
+                loop: true
             });
-            gsap.to(".linie-pv-verbrauch-ball5", {
-                duration: 3,
-                repeat: -1,
-                delay: 1.6,
-                motionPath: {
-                    path: "#linie-pv-verbrauch-path",
-                    align: "#linie-pv-verbrauch-path",
-                    autoRotate: true,
-                    alignOrigin: [0.5, 0.5]
-                }
-            });
-            gsap.to(".linie-pv-verbrauch-ball6", {
-                duration: 3,
-                repeat: -1,
-                delay: 1.8,
-                motionPath: {
-                    path: "#linie-pv-verbrauch-path",
-                    align: "#linie-pv-verbrauch-path",
-                    autoRotate: true,
-                    alignOrigin: [0.5, 0.5]
-                }
-            });
+
+            // anime({
+            //     targets: '.linie-netz-eeg-ball1',
+            //     translateX: liniNetzEegPath('x'),
+            //     translateY: liniNetzEegPath('y'),
+            //     rotate: liniNetzEegPath('angle'),
+            //     easing: 'easeInOutSine',
+            //     duration: 3000,
+            //     loop: true
+            // });
+
+            // anime({
+            //     targets: '.linie-netz-eeg-ball2',
+            //     translateX: liniNetzEegPath('x'),
+            //     translateY: liniNetzEegPath('y'),
+            //     rotate: liniNetzEegPath('angle'),
+            //     easing: 'easeInOutSine',
+            //     duration: 2700,
+            //     delay: 300,
+            //     loop: true
+            // });
+            // anime({
+            //     targets: '.linie-netz-eeg-ball3',
+            //     translateX: liniNetzEegPath('x'),
+            //     translateY: liniNetzEegPath('y'),
+            //     rotate: liniNetzEegPath('angle'),
+            //     easing: 'easeInOutSine',
+            //     duration: 2500,
+            //     delay: 500,
+            //     loop: true
+            // });
         });
     </script>
 </body>
